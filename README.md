@@ -20,7 +20,7 @@ The browser's main functionality is implemented in the `MyWebBrowser` class. Her
 
 - **Event Handling**: Connections between buttons and functions are established using the `clicked` signals. For example, clicking the search button triggers the `navigate` function, and the backward and forward buttons are connected to the `back` and `forward` functions of the web browser.
 
-- **Default URL**: The default web page is set to "https://github.com/debarshee2004" when the application is initialized.
+- **Default URL**: The default web page is set to "https://github.com/debarshee2004" when the application is initialized. *Note:* You can set it to whatever you want.
 
 ## Screenshots
 
