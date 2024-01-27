@@ -9,7 +9,7 @@ class MyWebBrowser():
 
         # Created the window for the Web Browser
         self.window = QWidget()
-        self.window.setWindowTitle("Dino Web Browser")
+        self.window.setWindowTitle("Dino WebBrowser")
 
         # Created the layout
         self.layout = QVBoxLayout()
@@ -50,7 +50,7 @@ class MyWebBrowser():
         self.layout.addWidget(self.browser)
 
         # Setting up the default Browser
-        self.browser.setUrl(QUrl("https://duckduckgo.com/"))
+        self.browser.setUrl(QUrl("https://github.com/debarshee2004"))
 
         self.window.setLayout(self.layout)
         self.window.show()
