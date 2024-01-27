@@ -26,7 +26,15 @@ The browser's main functionality is implemented in the `MyWebBrowser` class. Her
 
 ### Version 01
 
+![verone01](https://github.com/debarshee2004/web_browser/assets/129538241/62e57e4b-9269-460c-a30e-245201e82d33)
+
+![verone02](https://github.com/debarshee2004/web_browser/assets/129538241/88fa73ef-2828-46b4-a659-7aa810093e8f)
+
 ### Version 02
+
+![vertwo01](https://github.com/debarshee2004/web_browser/assets/129538241/3de7b8b8-0008-4e77-b34e-f4bfdda82a3e)
+
+![vertwo02](https://github.com/debarshee2004/web_browser/assets/129538241/b08b7933-e2e9-4a02-8020-530f5762ab29)
 
 ## Setup
 To run the Dino Web Browser, follow these steps:
