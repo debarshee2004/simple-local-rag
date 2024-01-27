@@ -1,13 +1,11 @@
 # Importing dependencies required for the project.
 from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWebEngineWidgets import *
 
-class MyWebBrowser(QMainWindow):
+class MyWebBrowser():
 
-    def __init__(self, *args, **kwargs):
-        super(MyWebBrowser, self).__init__(*args, **kwargs)
+    def __init__(self):
 
         # Created the window for the Web Browser
         self.window = QWidget()
@@ -42,6 +40,11 @@ class MyWebBrowser(QMainWindow):
         # Creating the Browser Engine
         self.browser = QWebEngineView()
 
+        self.go_btn.clicked.connect(lambda: self.navigate(self.url_bar.toPlainText()))
+        self.backward_btn.clicked.connect(self.browser.back)
+        self.forward_btn.clicked.connect(self.browser.forward)
+
+
         # Setting up the layout
         self.layout.addLayout(self.horizontal)
         self.layout.addWidget(self.browser)
@@ -51,6 +54,14 @@ class MyWebBrowser(QMainWindow):
 
         self.window.setLayout(self.layout)
         self.window.show()
+
+    # Function to change thw URL
+    def navigate(self, url):
+        if not url.startswith("http"):
+            url = "http://" + url
+            self.url_bar.setText(url)
+        self.browser.setUrl(QUrl(url))
+
 
 # Creating the Application
 app = QApplication([])
