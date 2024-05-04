@@ -1,54 +1,36 @@
-# Dino Web Browser
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Project Overview
-Dino Web Browser is a simple web browser application developed in Python using the PyQt5 library. It provides basic functionalities such as navigating to websites, going backward and forward in the browsing history, and displaying web content.
+## Getting Started
 
-## Library Used
-The project utilizes the following PyQt5 modules:
-- `QtWidgets`: Provides a set of UI components for building the graphical user interface.
-- `QtCore`: Contains core non-GUI functionality, including event handling and the signal-slot mechanism.
-- `QtWebEngineWidgets`: Enables the integration of a web engine for rendering HTML content.
+First, run the development server:
 
-## How It Works
-The browser's main functionality is implemented in the `MyWebBrowser` class. Here's a brief explanation of the key components:
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-- **Window and Layout**: The main application window is created using `QWidget`, and the layout is structured using `QVBoxLayout` and `QHBoxLayout`.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- **URL Bar and Buttons**: The user interface includes a QTextEdit for entering URLs, a QPushButton for initiating the search, and two additional buttons for navigating backward and forward in the browsing history.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- **Browser Engine**: The web content is displayed using `QWebEngineView`, which is part of the QtWebEngine module.
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-- **Event Handling**: Connections between buttons and functions are established using the `clicked` signals. For example, clicking the search button triggers the `navigate` function, and the backward and forward buttons are connected to the `back` and `forward` functions of the web browser.
+## Learn More
 
-- **Default URL**: The default web page is set to "https://github.com/debarshee2004" when the application is initialized. *Note:* You can set it to whatever you want.
+To learn more about Next.js, take a look at the following resources:
 
-## Screenshots
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Version 01
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-![verone01](https://github.com/debarshee2004/web_browser/assets/129538241/62e57e4b-9269-460c-a30e-245201e82d33)
+## Deploy on Vercel
 
-![verone02](https://github.com/debarshee2004/web_browser/assets/129538241/88fa73ef-2828-46b4-a659-7aa810093e8f)
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### Version 02
-
-![vertwo01](https://github.com/debarshee2004/web_browser/assets/129538241/3de7b8b8-0008-4e77-b34e-f4bfdda82a3e)
-
-![vertwo02](https://github.com/debarshee2004/web_browser/assets/129538241/b08b7933-e2e9-4a02-8020-530f5762ab29)
-
-## Setup
-To run the Dino Web Browser, follow these steps:
-
-1. Install the required libraries using the following command:
-    ```
-    pip install PyQt5 PyQtWebEngine
-    ```
-
-2. Copy and paste the provided Python code into a file with a `.py` extension.
-
-3. Execute the script, and the Dino Web Browser window will appear.
-
-4. Enter the desired URL in the URL bar, click the search button, and explore the web.
-
-## Conclusion
-Dino Web Browser is a lightweight web browser implemented in Python, making use of the PyQt5 library. While it offers basic web browsing functionalities, it serves as a foundation that can be extended to include additional features and improvements. Feel free to experiment and enhance the browser according to your requirements.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
