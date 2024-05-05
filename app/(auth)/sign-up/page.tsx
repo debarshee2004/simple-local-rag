@@ -1,7 +1,9 @@
 "use client";
 
-import GitHubButton from "@/components/GitHubButton";
-import GoogleButton from "@/components/GoogleButton";
+import React from "react";
+import Link from "next/link";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -17,13 +19,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import RegisterFormSchema from "@/model/RegisterFormSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import GitHubButton from "@/components/GitHubButton";
+import GoogleButton from "@/components/GoogleButton";
 
 const RegisterUser = () => {
   const form = useForm<z.infer<typeof RegisterFormSchema>>({
