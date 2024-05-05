@@ -9,14 +9,14 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <div className="m-4">
+      <div className="m-4 fixed">
         <Link href="/">
           <Button variant="outline" size="icon">
             <ChevronLeftIcon className="h-4 w-4" />
           </Button>
         </Link>
       </div>
-      <div className="relative flex pt-20 justify-center max-h-screen">
+      <div className="flex flex-col items-center justify-center min-h-screen p-4">
         {children}
       </div>
     </>
