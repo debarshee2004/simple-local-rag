@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
-import { IoLogoGithub } from "react-icons/io";
+import { Icons } from "./icons";
 
 const GitHubButton = () => {
   return (
@@ -9,7 +9,7 @@ const GitHubButton = () => {
         className="flex justify-center text-center w-[130px] sm:w-40"
         variant="outline"
       >
-        <IoLogoGithub />
+        <Icons.gitHub className="h-3 w-3" />
         <p className="p-2">GitHub</p>
       </Button>
     </div>
