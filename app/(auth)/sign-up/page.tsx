@@ -116,7 +116,9 @@ const RegisterUser = () => {
               />
             </div>
             <div className="py-3">
-              <Button type="submit">Submit</Button>
+              <Button className="w-full" type="submit">
+                Submit
+              </Button>
             </div>
           </form>
         </Form>
