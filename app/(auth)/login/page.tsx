@@ -72,7 +72,11 @@ const RegisterUser = () => {
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input placeholder="" type="password" {...field} />
+                      <Input
+                        placeholder="********"
+                        type="password"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

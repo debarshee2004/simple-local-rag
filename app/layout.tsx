@@ -6,7 +6,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SupaNext-Todo",
+  title: "SupaTodo - Todo List",
   description: "CRUD Todo application using Supabase",
 };
 

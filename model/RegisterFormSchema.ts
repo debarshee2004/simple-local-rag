@@ -3,7 +3,6 @@ import { z } from "zod";
 const RegisterFormSchema = z
   .object({
     emailAddress: z.string().email(),
-    username: z.string(),
     password: z.string().min(8),
     passwordConfirm: z.string(),
   })

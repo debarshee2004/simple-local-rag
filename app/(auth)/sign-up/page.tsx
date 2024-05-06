@@ -30,7 +30,6 @@ const RegisterUser = () => {
     resolver: zodResolver(RegisterFormSchema),
     defaultValues: {
       emailAddress: "",
-      username: "",
       password: "",
       passwordConfirm: "",
     },
@@ -73,27 +72,16 @@ const RegisterUser = () => {
             <div className="flex flex-col py-2 text-left">
               <FormField
                 control={form.control}
-                name="username"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Username</FormLabel>
-                    <FormControl>
-                      <Input placeholder="" type="text" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="flex flex-col py-2 text-left">
-              <FormField
-                control={form.control}
                 name="password"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input placeholder="" type="password" {...field} />
+                      <Input
+                        placeholder="********"
+                        type="password"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -108,7 +96,11 @@ const RegisterUser = () => {
                   <FormItem>
                     <FormLabel>Confirm Password</FormLabel>
                     <FormControl>
-                      <Input placeholder="" type="password" {...field} />
+                      <Input
+                        placeholder="********"
+                        type="password"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
