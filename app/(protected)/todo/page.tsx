@@ -1,7 +1,7 @@
 import React from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronLeftIcon, CirclePlus, LogOut } from "lucide-react";
-import Link from "next/link";
 import Todo from "@/components/Todo";
 
 const TodoList = () => {

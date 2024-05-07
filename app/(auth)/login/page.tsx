@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
+import { LoginWithEmail } from "@/server/UserAction";
 import LoginFormSchema from "@/model/LoginFormSchema";
 import GitHubButton from "@/components/GitHubButton";
 import GoogleButton from "@/components/GoogleButton";
@@ -34,7 +35,7 @@ const RegisterUser = () => {
     },
   });
   const handleLogInSubmit = async (values: z.infer<typeof LoginFormSchema>) => {
-    console.log(values);
+    LoginWithEmail(values);
   };
   return (
     <Card className="flex flex-col text-left h-3/5 w-[320px] sm:w-[400px]">
