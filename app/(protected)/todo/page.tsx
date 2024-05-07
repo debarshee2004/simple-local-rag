@@ -23,7 +23,7 @@ const TodoList = () => {
           </Link>
         </div>
       </div>
-      <div className="mt-20 ml-4 text-2xl font-bold">Tasks</div>
+      <div className="mt-20 ml-4 text-2xl font-bold">SupaTodo</div>
       <div className="mt-2 text-center">
         <Todo />
       </div>
