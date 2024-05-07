@@ -22,6 +22,8 @@ import {
 import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { RegisterWithEmail } from "@/server/UserAction";
+import { readUserSession } from "@/lib/supabase";
+import { redirect } from "next/navigation";
 import RegisterFormSchema from "@/model/RegisterFormSchema";
 import GitHubButton from "@/components/GitHubButton";
 import GoogleButton from "@/components/GoogleButton";
@@ -38,7 +40,13 @@ const RegisterUser = () => {
   const handleSignUpSubmit = async (
     values: z.infer<typeof RegisterFormSchema>
   ) => {
-    RegisterWithEmail(values);
+    const result = await RegisterWithEmail(values);
+    const { error } = JSON.parse(result);
+    console.error(error);
+    const { data } = await readUserSession();
+    if (data.session) {
+      return redirect("/todo");
+    }
   };
   return (
     <Card className="flex flex-col text-left h-3/5 w-[320px] sm:w-[400px]">
