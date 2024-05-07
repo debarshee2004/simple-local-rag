@@ -16,6 +16,7 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
+import { createTodo } from "@/server/TodoAction";
 import CreateTodoSchema from "@/model/CreateTodoSchema";
 
 const CreateTodo = () => {
@@ -26,7 +27,8 @@ const CreateTodo = () => {
     },
   });
   const handleCreateTodo = async (values: z.infer<typeof CreateTodoSchema>) => {
-    console.log(values);
+    const result = await createTodo(values.title);
+    const { statusText } = JSON.parse(result);
   };
   return (
     <div className="flex flex-col min-h-screen">

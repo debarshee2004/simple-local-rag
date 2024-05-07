@@ -6,12 +6,13 @@ import { Button } from "./ui/button";
 import { Pencil, Trash2 } from "lucide-react";
 import { Checkbox } from "./ui/checkbox";
 
-const Todo = () => {
+const Todo = (props: any) => {
   return (
     <div className="flex w-full justify-center">
       <div className="h-10 flex justify-between items-center rounded-md border w-[380px] sm:w-[700px] py-8">
         <div className="flex justify-between items-center">
           <Checkbox
+            checked={props.completed}
             onCheckedChange={() => {
               console.log("Checkbox Clicked");
             }}
@@ -19,7 +20,7 @@ const Todo = () => {
             id="todo"
           />
           <label htmlFor="todo" className="pl-4">
-            This is a Todo
+            {props.title}
           </label>
         </div>
         <div>

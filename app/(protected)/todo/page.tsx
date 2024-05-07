@@ -2,9 +2,11 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronLeftIcon, CirclePlus, LogOut } from "lucide-react";
+import { readTodo } from "@/server/TodoAction";
 import Todo from "@/components/Todo";
 
-const TodoList = () => {
+export default async function TodoList() {
+  const { data } = await readTodo();
   return (
     <div className="flex flex-col min-h-screen">
       <div className="h-16 w-full flex justify-between fixed z-50 bg-[#0C0A09]">
@@ -24,9 +26,13 @@ const TodoList = () => {
         </div>
       </div>
       <div className="mt-20 ml-4 text-2xl font-bold">SupaTodo</div>
-      <div className="mt-2 text-center">
-        <Todo />
-      </div>
+      {data?.map((todo, index) => {
+        return (
+          <div key={index} className="mt-2 text-center">
+            <Todo title={todo.title} completed={todo.completed} />
+          </div>
+        );
+      })}
       <div className="h-16 py-2 px-4 w-full bottom-0 fixed z-50 text-center">
         <Link href="/create-todo">
           <Button className="h-10 w-full sm:w-[700px] text-base">
@@ -36,6 +42,4 @@ const TodoList = () => {
       </div>
     </div>
   );
-};
-
-export default TodoList;
+}
