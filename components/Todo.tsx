@@ -10,7 +10,13 @@ const Todo = () => {
     <div className="flex w-full justify-center">
       <div className="h-10 flex justify-between items-center rounded-md border w-[380px] sm:w-[700px] py-8">
         <div className="flex justify-between items-center">
-          <Checkbox className="ml-4 h-5 w-5" id="todo" />
+          <Checkbox
+            onCheckedChange={() => {
+              console.log("Checkbox Clicked");
+            }}
+            className="ml-4 h-5 w-5"
+            id="todo"
+          />
           <label htmlFor="todo" className="pl-4">
             This is a Todo
           </label>
