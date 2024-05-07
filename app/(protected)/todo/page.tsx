@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeftIcon, CirclePlus, LogOut } from "lucide-react";
 import Link from "next/link";
+import Todo from "@/components/Todo";
 
 const TodoList = () => {
   return (
@@ -22,8 +23,11 @@ const TodoList = () => {
           </Link>
         </div>
       </div>
-      <div className="mt-20 text-center">TodoList</div>
-      <div className="h-16 p-4 w-full bottom-0 fixed z-50 text-center">
+      <div className="mt-20 ml-4 text-2xl font-bold">Tasks</div>
+      <div className="mt-2 text-center">
+        <Todo />
+      </div>
+      <div className="h-16 py-2 px-4 w-full bottom-0 fixed z-50 text-center">
         <Link href="/create-todo">
           <Button className="h-10 w-full sm:w-[700px] text-base">
             <CirclePlus className="mr-2 h-4 w-4" /> Add a Todo

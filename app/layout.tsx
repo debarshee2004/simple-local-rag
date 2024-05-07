@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const font_name = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "SupaTodo - Todo List",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={font_name.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
