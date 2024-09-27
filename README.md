@@ -1,8 +1,8 @@
 # Simple Local RAG Tutorial
 
-Local RAG pipeline we're going to build:
+The diagram of a local rag pipeline.
 
-!["This is a flowchart describing a simple local retrieval-augmented generation (RAG) workflow for document processing and embedding creation, followed by search and answer functionality. The process begins with a collection of documents, such as PDFs or a 1200-page nutrition textbook, which are preprocessed into smaller chunks, for example, groups of 10 sentences each. These chunks are used as context for the Large Language Model (LLM). A cool person (potentially the user) asks a query such as "What are the macronutrients? And what do they do?" This query is then transformed by an embedding model into a numerical representation using sentence transformers or other options from Hugging Face, which are stored in a torch.tensor format for efficiency, especially with large numbers of embeddings (around 100k+). For extremely large datasets, a vector database/index may be used. The numerical query and relevant document passages are processed on a local GPU, specifically an RTX 4090. The LLM generates output based on the context related to the query, which can be interacted with through an optional chat web app interface. All of this processing happens on a local GPU. The flowchart includes icons for documents, processing steps, and hardware, with arrows indicating the flow from document collection to user interaction with the generated text and resources."]
+!["This is a flowchart describing a simple local retrieval-augmented generation (RAG) workflow for document processing and embedding creation, followed by search and answer functionality. The process begins with a collection of documents, such as PDFs or a 1200-page nutrition textbook, which are preprocessed into smaller chunks, for example, groups of 10 sentences each. These chunks are used as context for the Large Language Model (LLM). A cool person (potentially the user) asks a query such as "What are the macronutrients? And what do they do?" This query is then transformed by an embedding model into a numerical representation using sentence transformers or other options from Hugging Face, which are stored in a torch.tensor format for efficiency, especially with large numbers of embeddings (around 100k+). For extremely large datasets, a vector database/index may be used. The numerical query and relevant document passages are processed on a local GPU, specifically an RTX 4090. The LLM generates output based on the context related to the query, which can be interacted with through an optional chat web app interface. All of this processing happens on a local GPU. The flowchart includes icons for documents, processing steps, and hardware, with arrows indicating the flow from document collection to user interaction with the generated text and resources."](https://github.com/user-attachments/assets/1e52c390-ba79-4908-a748-10e39f54a4dc)
 
 PDF source: https://pressbooks.oer.hawaii.edu/humannutrition2/
 
@@ -20,7 +20,7 @@ Note: Tested in Python 3.11, running on Windows 11 with a NVIDIA RTX 4090 with C
 ### Clone repo
 
 ```
-git clone https://github.com/mrdbourke/simple-local-rag.git
+git clone https://github.com/debarshee2004/simple-local-rag.git
 ```
 
 ```
@@ -153,3 +153,12 @@ Performance wise, LLM APIs may still perform better than an open-source model ru
 | **Large Language Model (LLM)**      | A model which has been trained to numerically represent the patterns in text. A generative LLM will continue a sequence when given a sequence. <br>For example, given a sequence of the text "hello, world!", a genertive LLM may produce "we're going to build a RAG pipeline today!".<br> This generation will be highly dependant on the training data and prompt.                                                                                                                                                                                                                                     |
 | **LLM context window**              | The number of tokens a LLM can accept as input. For example, as of March 2024, GPT-4 has a default context window of 32k tokens<br> (about 96 pages of text) but can go up to 128k if needed. A recent open-source LLM from Google, Gemma (March 2024) has a context<br> window of 8,192 tokens (about 24 pages of text). A higher context window means an LLM can accept more relevant information<br> to assist with a query. For example, in a RAG pipeline, if a model has a larger context window, it can accept more reference items<br> from the retrieval system to aid with its generation.      |
 | **Prompt**                          | A common term for describing the input to a generative LLM. The idea of "[prompt engineering](https://en.wikipedia.org/wiki/Prompt_engineering)" is to structure a text-based<br> (or potentially image-based as well) input to a generative LLM in a specific way so that the generated output is ideal. This technique is<br> possible because of a LLMs capacity for in-context learning, as in, it is able to use its representation of language to breakdown <br>the prompt and recognize what a suitable output may be (note: the output of LLMs is probable, so terms like "may output" are used). |
+
+## Summary
+
+* RAG = powerful technique for generating text based on reference documents.
+* Doesn't have to be too complicated to setup. We've just built one from scratch running on our local machines that can run in 3-4 functions.
+* Hardware use = use GPU where possible to accelerate embedding creation and LLM generation.
+    * Keep in mind the limitations on your local hardware.
+* Many open-source embedding models and LLMs starting to become available, keep experimenting to find which is best.
+* Semantic search is a really helpful tool.
